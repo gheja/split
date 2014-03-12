@@ -7,7 +7,7 @@ The program will try to open the input file in read-only mode and then split it 
 
 The files created are simply the input file split into multiple parts so joining the parts together again is simple as copying more binary files (use /B) with one destination:
 ```
-   copy /b part00000000+part00000001+part00000002 joined.txt
+copy /b part00000000+part00000001+part00000002 joined.txt
 ```
 
 Note: the input file should exactly match (checksums must be equal) with the joined one. If this is not the case, something went wrong for sure!
@@ -17,13 +17,13 @@ The block size is currently hard-coded, might change in the future.
 Usage
 -----
 ```
-  split <input filename> <output file prefix>
+split <input filename> <output file prefix>
 ```
 
 Example
 -------
 ```
-  split test.txt part
+split test.txt part
 ```
 
 (Yeah, basically I had enough of all the crappy shareware/bloatware/gradientinthebackgroundsoitiseightmegabytes-ware "split" solutions for Windows...)
