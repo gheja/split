@@ -64,6 +64,9 @@ int main(int argc, char *argv[])
 		fprintf(stdout, "\n");
 		fprintf(stdout, "Bugs? Contact? See the project page!\n");
 		fprintf(stdout, "  https://github.com/gheja/split\n");
+		fprintf(stdout, "\n");
+		fprintf(stdout, "This program is an Open Source Software, licensed under WTFPL v2 (see attached\n");
+		fprintf(stdout, "LICENSE.txt or http://www.wtfpl.net/ for more information).\n");
 		return 0;
 	}
 
