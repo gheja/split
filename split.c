@@ -20,9 +20,9 @@ as the name is changed.
 
 int file_exists(const char *filename)
 {
-    struct stat st;
-    int result = stat(filename, &st);
-    return result == 0;
+	struct stat st;
+	int result = stat(filename, &st);
+	return result == 0;
 }
 
 int main(int argc, char *argv[])
@@ -69,17 +69,17 @@ int main(int argc, char *argv[])
 		fprintf(stdout, "LICENSE.txt or http://www.wtfpl.net/ for more information).\n");
 		return 0;
 	}
-
+	
 	if (!file_exists(argv[1]))
 	{
-        fprintf(stderr, "Input file does not exist, exiting.\n");
-        exit(1);
+		fprintf(stderr, "Input file does not exist, exiting.\n");
+		exit(1);
 	}
-
+	
 	f_in = fopen(argv[1], "rb");
 	if (f_in == NULL)
 	{
-        fprintf(stderr, "Could not open input file for reading, exiting.\n");
+		fprintf(stderr, "Could not open input file for reading, exiting.\n");
 		exit(1);
 	}
 	
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
 		}
 		
 		f_out = fopen(filename, "wb");
-
+		
 		if (f_out == NULL)
 		{
 			fprintf(stderr, "Could not open output file for writing, exiting.\n", filename);
@@ -106,10 +106,10 @@ int main(int argc, char *argv[])
 		}
 		
 		fprintf(stdout, "%s\n", filename);
-
-	    j = 0;
-	    while (!feof(f_in) && j < blocks_per_part)
-	    {
+		
+		j = 0;
+		while (!feof(f_in) && j < blocks_per_part)
+		{
 			bytes_read = fread(buffer, 1, sizeof(buffer), f_in);
 			bytes_written = fwrite(buffer, 1, bytes_read, f_out);
 			
